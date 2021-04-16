@@ -61,10 +61,13 @@ function GetCameraPixels()
 	tempCtx.drawImage(videoElem, 0, 0, videoWidth, videoHeight);
 	
 	// 3) Retrieve the canvas pixel data
-	const imageData1 = tempCtx.getImageData(0, 0, videoWidth*0.5, videoHeight*0.5);
-	const imageData2 = tempCtx.getImageData(videoWidth*0.5, 0, videoWidth, videoHeight*0.5);
-	const imageData3 = tempCtx.getImageData(0, videoHeight*0.5, videoWidth*0.5, videoHeight);
-	const imageData4 = tempCtx.getImageData(videoWidth*0.5, videoHeight*0.5, videoWidth, videoHeight);
+	// const imageData1 = tempCtx.getImageData(0, 0, videoWidth*0.5, videoHeight*0.5);
+	// const imageData2 = tempCtx.getImageData(videoWidth*0.5, 0, videoWidth, videoHeight*0.5);
+	// const imageData3 = tempCtx.getImageData(0, videoHeight*0.5, videoWidth*0.5, videoHeight);
+	const imageData1 = tempCtx.getImageData(0, 0, videoWidth, videoHeight*0.5);
+	const imageData2 = tempCtx.getImageData(0, videoHeight*0.5, videoWidth, videoHeight);
+	const imageData3 = tempCtx.getImageData(0, 0, videoWidth*0.5, videoHeight);
+	const imageData4 = tempCtx.getImageData(videoWidth*0.5, 0, videoWidth, videoHeight);
 	
 	//COLOR1
 	// Now calculate the average color from the retrieved pixel data.
@@ -148,9 +151,9 @@ function CalculateAverage1Color(imageData1)
 	}
 	
 	// Calculate the average RGB components by dividing the sum by the count.
-	const averageR = totalR / count;
-	const averageG = totalG / count;
-	const averageB = totalB / count;
+	const averageR = totalR / count * 1.2;
+	const averageG = totalG / count * 1.2;
+	const averageB = totalB / count * 1.2;
 	
 	// Bytes return values in the range 0-255, and the average is in the same range.
 	// However Construct object's color values use a fractional 0-1 range.
@@ -190,9 +193,9 @@ function CalculateAverage2Color(imageData2)
 	}
 	
 	// Calculate the average RGB components by dividing the sum by the count.
-	const averageR = totalR / count;
-	const averageG = totalG / count;
-	const averageB = totalB / count;
+	const averageR = totalR / count * 1.1;
+	const averageG = totalG / count * 1.1;
+	const averageB = totalB / count * 1.1;
 	
 	// Bytes return values in the range 0-255, and the average is in the same range.
 	// However Construct object's color values use a fractional 0-1 range.

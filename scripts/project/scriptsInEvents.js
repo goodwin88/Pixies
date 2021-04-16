@@ -8,7 +8,7 @@ import * as Camera from "./camera.js";
 {
 	const scriptsInEvents = {
 
-		async EventSheet1_Event1_Act1(runtime, localVars)
+		async Mechaniccamera_Event1_Act1(runtime, localVars)
 		{
 			Camera.StartCamera();	// see camera.js
 		}

@@ -2700,15 +2700,19 @@ ImageWidth(){return this.GetCurrentImageInfo().GetWidth()},ImageHeight(){return 
 		C3.Plugins.Button,
 		C3.Plugins.Text,
 		C3.Plugins.Sprite,
-		C3.Plugins.Button.Cnds.OnClicked,
-		C3.ScriptsInEvents.EventSheet1_Event1_Act1,
 		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.Sprite.Acts.SetDefaultColor,
 		C3.Plugins.Sprite.Exps.ColorValue,
 		C3.Plugins.Sprite.Cnds.OnCreated,
-		C3.Plugins.Sprite.Acts.SetEffectParam,
-		C3.Plugins.System.Exps.int,
-		C3.Plugins.System.Exps.random
+		C3.Plugins.Sprite.Acts.SetPosToObject,
+		C3.Plugins.Sprite.Acts.SetSize,
+		C3.Plugins.Sprite.Exps.Width,
+		C3.Plugins.Sprite.Exps.Height,
+		C3.Plugins.Sprite.Acts.MoveToLayer,
+		C3.Plugins.Sprite.Acts.MoveToTop,
+		C3.Plugins.Sprite.Acts.MoveToBottom,
+		C3.Plugins.Button.Cnds.OnClicked,
+		C3.ScriptsInEvents.Mechaniccamera_Event1_Act1
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -2723,12 +2727,32 @@ ImageWidth(){return this.GetCurrentImageInfo().GetWidth()},ImageHeight(){return 
 		{Average4ColorText: 0},
 		{Average4ColorSprite: 0},
 		{spriteBase: 0},
-		{spriteColor1: 0},
-		{spriteColor2: 0},
-		{spriteColor3: 0},
-		{spriteColor4: 0},
 		{spriteEyes: 0},
-		{spriteSkins: 0}
+		{framesHeadColor1: 0},
+		{framesHeadColor2: 0},
+		{framesHeadColor3: 0},
+		{framesHeadColor4: 0},
+		{framesTorsoColor1: 0},
+		{framesTorsoColor2: 0},
+		{framesTorsoColor3: 0},
+		{framesTorsoColor4: 0},
+		{framesArmLeftColor1: 0},
+		{framesArmLeftColor2: 0},
+		{framesArmLeftColor3: 0},
+		{framesArmLeftColor4: 0},
+		{framesArmRightColor1: 0},
+		{framesArmRightColor2: 0},
+		{framesArmRightColor3: 0},
+		{framesArmRightColor4: 0},
+		{framesTailColor1: 0},
+		{framesTailColor2: 0},
+		{framesTailColor3: 0},
+		{framesTailColor4: 0},
+		{spriteSkins: 0},
+		{familyColor1: 0},
+		{familyColor2: 0},
+		{familyColor3: 0},
+		{familyColor4: 0}
 	];
 }
 
@@ -2834,15 +2858,8 @@ ImageWidth(){return this.GetCurrentImageInfo().GetWidth()},ImageHeight(){return 
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
-		() => "tint",
 		() => 0,
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			const f1 = p._GetNode(1).GetBoundMethod();
-			return () => f0(f1(256));
-		},
-		() => 1,
-		() => 2
+		() => "colors"
 	];
 }
 
